@@ -51,7 +51,7 @@ public class TaskService {
 
     public void taskDetails(){
         Task task = selectTask();
-        UserService userService = new UserService();
+       //UserService userService = new UserService();
         int choice = 0;
         do {
             System.out.println( task.getNumber() +"\t" + task.getName()
@@ -64,8 +64,8 @@ public class TaskService {
             choice = Integer.parseInt( app.getScanner().nextLine() );
             switch (choice){
                 case 1:
-                    //User user =  app.getUserService().selectUser();
-                    User user =  userService.selectUser();
+                    User user =  app.getUserService().selectUser();
+                    //User user =  userService.selectUser();
                     task.setAssignee(user);
                     break;
                 case 2:

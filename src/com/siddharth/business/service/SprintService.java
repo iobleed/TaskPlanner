@@ -44,7 +44,7 @@ public class SprintService {
     public void sprintDetails(){
         Sprint sprint = selectSprint();
         ArrayList<Task> tasks = sprint.getTasks();
-        TaskService taskService = new TaskService();
+       // TaskService taskService = new TaskService();
         int choice = 0;
         do{
             System.out.println("Active Sprints\nS.No.\tSprint Number\tSprint Name\n");
@@ -62,8 +62,8 @@ public class SprintService {
                     "0. Back");
             choice = Integer.parseInt(app.getScanner().nextLine());
             if(choice==1){
-                //Task task = app.getTaskService().selectTask();
-                Task task = taskService.selectTask();
+                Task task = app.getTaskService().selectTask();
+                //Task task = taskService.selectTask();
                 tasks.add(task);
             }
         }while (choice != 0);

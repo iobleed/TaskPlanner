@@ -7,17 +7,17 @@ import com.siddharth.business.service.UserService;
 import com.siddharth.data.entity.User;
 
 public class CliController {
-    TaskPlannerApplication app = TaskPlannerApplication.getInstance();
+    private TaskPlannerApplication app = TaskPlannerApplication.getInstance();
     public void execute(){
-        int choice = 0;
+        int choice;
 
-       /* UserService userService = app.getUserService();
+        UserService userService = app.getUserService();
         SprintService sprintService = app.getSprintService();
-        TaskService taskService = app.getTaskService();*/
+        TaskService taskService = app.getTaskService();
 
-        UserService userService = new UserService();
+        /*UserService userService = new UserService();
         SprintService sprintService = new SprintService();
-        TaskService taskService = new TaskService();
+        TaskService taskService = new TaskService();*/
 
         System.out.println("Running Task Planner\n");
         do{

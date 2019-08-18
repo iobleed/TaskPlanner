@@ -12,22 +12,23 @@ public class TaskPlannerApplication {
     private static TaskPlannerApplication taskPlannerApplication = null;
 
 
-    private  Scanner scanner;
-   /* UserService userService ;
-    SprintService sprintService;
-    TaskService taskService ;*/
-    private AppRepository appRepository;
+    private static Scanner scanner;
+    private static UserService userService ;
+    private static SprintService sprintService;
+    private static TaskService taskService ;
+    private static AppRepository appRepository;
     private TaskPlannerApplication(){
         // private constructor
-        scanner = new Scanner(System.in);
-        /*userService = new UserService();
-        sprintService = new SprintService();
-        taskService = new TaskService();*/
-        appRepository = new AppRepository();
+
     }
     public static TaskPlannerApplication getInstance(){
         if(taskPlannerApplication == null){
             taskPlannerApplication = new TaskPlannerApplication();
+            scanner = new Scanner(System.in);
+            userService = new UserService();
+            sprintService = new SprintService();
+            taskService = new TaskService();
+            appRepository = new AppRepository();
         }
         return taskPlannerApplication;
     }
@@ -40,7 +41,7 @@ public class TaskPlannerApplication {
     public  Scanner getScanner() {
         return scanner;
     }
-  /*  public UserService getUserService() {
+    public UserService getUserService() {
         return userService;
     }
 
@@ -51,7 +52,6 @@ public class TaskPlannerApplication {
     public TaskService getTaskService() {
         return taskService;
     }
-*/
     public void execute(){
         CliController cliController = new CliController();
         cliController.execute();
